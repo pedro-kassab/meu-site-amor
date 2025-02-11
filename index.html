@@ -1,0 +1,92 @@
+!DOCTYPE html
+html lang=pt-BR
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleBotão Pulsantetitle
+    style
+        body {
+            display flex;
+            justify-content center;
+            align-items center;
+            height 100vh;
+            margin 0;
+            background-color #f0f0f0;
+            font-family Arial, sans-serif;
+            position relative;  Para posicionar a mensagem 
+        }
+
+         Estilo do botão 
+        button {
+            padding 20px 40px;
+            font-size 24px;
+            background-color #ff69b4;
+            color white;
+            border none;
+            border-radius 10px;
+            cursor pointer;
+            animation pulse 1.5s infinite;  Animação de pulsar 
+        }
+
+         Animação de pulsar 
+        @keyframes pulse {
+            0% {
+                transform scale(1);  Tamanho normal 
+            }
+            50% {
+                transform scale(1.1);  Aumenta um pouco 
+            }
+            100% {
+                transform scale(1);  Volta ao tamanho normal 
+            }
+        }
+
+         Efeito ao passar o mouse 
+        buttonhover {
+            animation none;  Para a animação ao passar o mouse 
+            transform scale(1.1);
+        }
+
+         Estilo da mensagem 
+        #mensagem {
+            display none;  Inicialmente escondida 
+            position absolute;
+            top 50%;
+            left 50%;
+            transform translate(-50%, -50%);
+            font-size 48px;
+            color #ff69b4;
+            animation fadeIn 1s ease-in-out;  Animação de aparecer 
+        }
+
+         Animação de aparecer 
+        @keyframes fadeIn {
+            0% {
+                opacity 0;
+                transform translate(-50%, -50%) scale(0.5);
+            }
+            100% {
+                opacity 1;
+                transform translate(-50%, -50%) scale(1);
+            }
+        }
+    style
+head
+body
+    button id=botao onclick=mostrarMensagem()Clique aquibutton
+    div id=mensagemEu te amo!div
+
+    script
+        function mostrarMensagem() {
+            const botao = document.getElementById('botao');
+            const mensagem = document.getElementById('mensagem');
+
+             Esconde o botão
+            botao.style.display = 'none';
+
+             Mostra a mensagem
+            mensagem.style.display = 'block';
+        }
+    script
+body
+html
